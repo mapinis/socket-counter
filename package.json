@@ -2,9 +2,12 @@
   "name": "socket-counter",
   "version": "1.0.0",
   "description": "Using socket, React, and express to show a counter of how many people are looking at the site.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\"\"yarn client\""
   },
   "repository": {
     "type": "git",
@@ -18,7 +21,11 @@
   "homepage": "https://github.com/mapinis/socket-counter#readme",
   "dependencies": {
     "express": "^4.16.2",
+    "morgan": "^1.9.0",
     "socket.io": "^2.0.4",
     "yarn": "^1.5.1"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1"
   }
 }
