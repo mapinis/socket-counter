@@ -1,35 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
+import socketIOClient from 'socket.io-client';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      response: ''
+      count: 0
     };
   };
 
   componentDidMount() {
-    this.callApi()
-      .then(res => this.setState({ response: res.server }))
-      .catch(err => console.log(err));
-  }
-
-  callApi = async () => {
-    const response = await fetch('/api/hello');
-    const body = await response.json();
-
-    if (response.status !== 200) throw Error(body.message);
-
-    return body;
+    const socket = socketIOClient("");
+    socket.on("count", data => this.setState({ count: data }));
   }
 
   render() {
     return (
       <div className="App">
-        <p className="App_text">There are</p>
-        <p className="App_counter">{this.state.response}</p>
-        <p className="App_text">people here</p>
+        <p className="App_text">There {this.state.count == 1 ? "is" : "are"}</p>
+        <p className="App_counter">{this.state.count}</p>
+        <p className="App_text">{this.state.count == 1 ? "person" : "people"} here</p>
       </div>
     );
   }
