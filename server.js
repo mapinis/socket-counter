@@ -15,6 +15,8 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => {
     numConnected -= 1;
     console.log('\x1b[31m', "User disconnected, total connected: " + numConnected);
+
+    io.emit("count", numConnected)
   });
 
 });
