@@ -1,0 +1,17 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.App_text {
+  font-size: 40px;
+  margin: 20px;
+}
+
+.App_counter {
+  margin: 0;
+  font-weight: bold;
+  font-size: 100px;
+}

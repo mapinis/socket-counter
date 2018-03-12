@@ -1,0 +1,24 @@
+{
+  "name": "socket-counter",
+  "version": "1.0.0",
+  "description": "Using socket, React, and express to show a counter of how many people are looking at the site.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mapinis/socket-counter.git"
+  },
+  "author": "Mark Apinis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mapinis/socket-counter/issues"
+  },
+  "homepage": "https://github.com/mapinis/socket-counter#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4",
+    "yarn": "^1.5.1"
+  }
+}
